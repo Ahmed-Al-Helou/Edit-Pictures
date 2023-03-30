@@ -1,0 +1,81 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body{
+    background: #333;
+    /* display: flex; >> to change with the margin:auto
+    justify-content: center; */
+}
+
+.container{
+    background: #222;
+    width: 80vw;/*vw > معناها على اي عرض شاشه بتشتغل*/
+    /* height: 80vh; */
+    margin: auto;/*ممكن نعملها زي هيك بدل ما نحط في الاب انو يكون قلكس وسنتر*/
+    padding: 20px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 5fr 3fr;/*5fr >> img && 3fr >> filter*/
+}
+
+.img{
+    display: flex;
+    flex-direction: column;/*عشان تيجي الصورة فوق بعض */
+    gap: 50px;/*ويخلي في مسافه  بينهم*/
+    justify-content: center;
+    align-items: center;/*to the all item inside hte center*/
+    
+}
+
+.img img,canvas{
+    max-width: 45vw;/*اقصى عرض هوا 45 اي عرض الها*/
+    max-height: 60vh;/*اقصى ارتقاع هو 60 */
+}
+.upload input{
+    display: none/*hide the file upload*/;
+}
+
+.upload label{
+    color: #fff;
+    padding: 8px 20px;
+    border: 2px #fff dashed;
+    cursor: pointer;
+}
+
+.filters ul,.filters ul li{
+    display: flex;
+    flex-direction: column;/*عشان يجو تحت بعض واقدر احط القاب*/
+    gap: 25px;
+    direction: rtl;/*عشان يخلي الكلام والرينج يبدو من اليمين*/
+}
+.filters ul li label{
+    color: #fff;
+}
+
+.filters ul li:last-child{
+    /*the parent is take the flex and flex-direction:column*/
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.filters ul li a,span{
+    color: #fff;
+    padding: 10px 20px;
+    background-color: green;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+@media screen and (max-width:650px){
+    .container{
+        grid-template-columns: 1fr ;
+        gap:50px
+    }
+
+    .img img,canvas{
+        max-width: 80vw;
+    }
+}
